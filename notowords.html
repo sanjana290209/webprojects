@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Number to Word Converter</title>
+    
+    <script>
+        function convertToWord() {
+            var numberInput = document.getElementById("numberInput").value;
+
+            // Validate if the input is a valid number within the specified range
+            if (isNaN(numberInput) || numberInput < 0 || numberInput > 999) {
+                alert("Please enter a valid number between 0 and 999");
+                return;
+            }
+
+            // Array for units, teens, and tens places
+            var units = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
+            var teens = ['Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+            var tens = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+
+            // Function to convert a number to its word form
+            function convertSingleDigit(num) {
+                return units[num];
+            }
+
+            function convertTwoDigits(num) {
+                if (num < 10) {
+                    return convertSingleDigit(num);
+                } else if (num < 20) {
+                    return teens[num - 10];
+                } else {
+                    return tens[Math.floor(num / 10)] + ' ' + convertSingleDigit(num % 10);
+                }
+            }
+
+            function convertToWords(number) {
+                if (number === 0) {
+                    return 'Zero';
+                } else if (number < 10) {
+                    return convertSingleDigit(number);
+                } else if (number < 100) {
+                    return convertTwoDigits(number);
+                } else {
+                    return convertSingleDigit(Math.floor(number / 100)) + ' Hundred ' + convertTwoDigits(number % 100);
+                }
+            }
+
+            // Display the result
+            var result = convertToWords(parseInt(numberInput));
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</head>
+<div class="nav"> 
+    <nav>
+      <ul>
+        <li><a href="index.html">Sign Up</a></li>
+        <li><a href="login.html">Login</a></li>
+       <li><a href="CV.html">CV</a></li>
+        <li><a href="notowords.html">Number to word</a></li>
+        <li><a href="Lab_5.html">Calculator</a></li>
+        <li><a href="date.html">Current Date in Formats</a></li>
+        <li><a href="multiple.html">Multiple of 3 or 7 or Both</a></li>
+        
+        
+      </ul>
+    </nav>
+    </div>
+<body>
+    <h2>Number to Word Converter</h2>
+    <form>
+        <label for="numberInput">Enter a number (0-999): </label>
+        <input type="number" id="numberInput" min="0" max="999" required>
+        <br>
+        <button type="button" onclick="convertToWord()">Convert</button>
+    </form>
+    <p id="result"></p>
+</body>
+</html>

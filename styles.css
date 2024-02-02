@@ -1,0 +1,107 @@
+
+    body {
+        font-family: Times New Roman, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('/Users/sanjana/Downloads/s.jpeg');
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+    
+       .container {
+        background-color:rgba(135, 102, 141, 0.536); 
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 5px;
+        margin-left: auto; 
+        margin-right: 30px; 
+        margin-top: -60px;
+    }
+        
+    h1{
+        color:#2e2463;
+    }
+    h2 {
+        color: #2e2463;
+    }
+    
+    form {
+        max-width: 300px;
+        margin: 0 auto;
+        text-align: right; 
+    }
+    
+    label {
+        display: block;
+        margin: 10px 0 5px;
+        text-align: left;
+        color: #2e2463;
+    }
+    
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        box-sizing: border-box; 
+        background-color:rgba(228, 150, 246, 0.051); 
+    }
+    
+    button {
+        background-color: #9033dc;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #f57cc2;
+    }
+    
+    p {
+        margin-top: 20px;
+        color: #741ed7;
+    }
+    a{
+        color: #741ed6;
+    }
+
+    nav {
+        position: fixed; 
+        top: 0; 
+        width: 40%; 
+        background-image:url('/Users/sanjana/Desktop/Screenshot 2024-01-20 at 12.32.35 PM.png');
+        color: #eb5fd3;
+        z-index: 1000; 
+    }
+
+    nav ul {
+        list-style-type: none;
+        display: flex; 
+        justify-content: space-around;
+        padding: 10px 0; 
+    }
+    
+    nav li {
+        margin: 10;
+    }
+    
+    nav a {
+        text-decoration: none; 
+        color: #ac58f086; 
+        font-weight: bold; 
+        padding: 10px 15px; 
+        transition: background-color 0.3s ease; 
+    }
+   
+    nav a:hover {
+        background-color: #4535aa7c; 
+    }
+    
+    
+    body {
+        padding-top: 60px; 
+    }

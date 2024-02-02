@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<div class="nav"> 
+    <nav>
+      <ul>
+        <li><a href="index.html">Sign Up</a></li>
+         <li><a href="login.html">Login</a></li>
+         <li><a href="CV.html">CV</a></li>
+        <li><a href="notowords.html">Number to word</a></li>
+        <li><a href="Lab_5.html">Calculator</a></li>
+        <li><a href="date.html">Current Date in Formats</a></li>
+        <li><a href="multiple.html">Multiple of 3 or 7 or Both</a></li>
+        
+        
+      </ul>
+    </nav>
+    </div>
+<body>
+
+    <h2>Simple Calculator</h2>
+
+    <label for="num1">Number 1:</label>
+    <input type="text" id="num1">
+
+    <label for="num2">Number 2:</label>
+    <input type="text" id="num2">
+
+    <br>
+
+    <button onclick="add()">Addition</button>
+    <button onclick="subtract()">Subtraction</button>
+    <button onclick="multiply()">Multiplication</button>
+    <button onclick="divide()">Division</button>
+
+    <br>
+
+    <p id="result">Result: </p>
+
+    <script>
+        function add() {
+            performOperation("add");
+        }
+
+        function subtract() {
+            performOperation("subtract");
+        }
+
+        function multiply() {
+            performOperation("multiply");
+        }
+
+        function divide() {
+            performOperation("divide");
+        }
+
+        function performOperation(operation) {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var resultElement = document.getElementById("result");
+
+            if (isNaN(num1) || isNaN(num2)) {
+                resultElement.textContent = "Please enter valid numbers.";
+                return;
+            }
+
+            switch (operation) {
+                case "add":
+                    resultElement.textContent = "Result: " + (num1 + num2);
+                    break;
+                case "subtract":
+                    resultElement.textContent = "Result: " + (num1 - num2);
+                    break;
+                case "multiply":
+                    resultElement.textContent = "Result: " + (num1 * num2);
+                    break;
+                case "divide":
+                    if (num2 === 0) {
+                        resultElement.textContent = "Cannot divide by zero.";
+                    } else {
+                        resultElement.textContent = "Result: " + (num1 / num2);
+                    }
+                    break;
+                default:
+                    resultElement.textContent = "Invalid operation.";
+            }
+        }
+    </script>
+
+</body>
+</html>

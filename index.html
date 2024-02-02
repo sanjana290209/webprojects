@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sign Up</title>
+
+        <link rel="stylesheet" href="styles.css">
+        <title>User Registration</title>
+        <script>
+            function validateForm() {
+                var username = document.getElementById("username").value;
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+                var confirmPassword = document.getElementById("confirm-password").value;
+    
+                // Check if all fields are filled out
+                if (username === "" || email === "" || password === "" || confirmPassword === "") {
+                    alert("Please fill out all fields");
+                    return false;
+                }
+    
+                // Validate email format
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!email.match(emailRegex)) {
+                    alert("Please enter a valid email address");
+                    return false;
+                }
+    
+                // Validate password constraints
+                var passwordRegex = /^(?=.[0-9])(?=.[a-zA-Z])([a-zA-Z0-9]+)$/;
+                if (!password.match(passwordRegex)) {
+                    alert("Password must contain at least one letter and one number");
+                    return false;
+                }
+    
+                // Check if password and confirm password match
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match");
+                    return false;
+                }
+    
+                // If all validations pass, submit the form
+                return true;
+            }
+        </script>
+    
+</head>
+<body>
+    <header>
+        <h1> </h1>
+    </header>
+    <div class="nav">
+        <nav>
+             <ul>
+                <li><a href="index.html">Sign Up</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="CV.html">CV</a></li>
+                <li><a href="Lab_5.html">LAB 5</a></li>
+            </ul>
+        </nav>
+        </div>
+
+    <div class="container">
+        <h2>Sign Up</h2>
+        <<form action="submit_form.php" method="post" onsubmit="return validateForm()">
+            <h2>User Registration</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <p> Have an account? <a href="login.html">Login here</a>.</p>
+    </div>
+   
+</body>
+</html> 
+
+
